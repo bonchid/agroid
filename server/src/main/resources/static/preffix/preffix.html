@@ -1,0 +1,45 @@
+<div>
+    <div>Welcome to preffix world!</div>
+    <div>Who r u man?</div><br><br>
+
+    <div>
+        <h4>Add new company and preffix</h4>
+        <p>
+
+            <label>
+                registry: <input type="number" ng-model="registry">
+            </label>
+            <label>
+                registrant: <input type="number" ng-model="registrant">
+            </label><br><br>
+            <label>
+                company name: <input type="text" ng-model="name">
+            </label>
+            <label>
+                address: <input type="text" ng-model="address">
+            </label><br><br>
+
+            <label>
+                for user : <select ng-model="userId" ng-options="user.login for user in userList"></select>
+            </label><br><br>
+
+            <input type="button" value="add preffix" ng-click="addPreffix()">
+
+        </p>
+    </div>
+
+    <br><br><br>
+
+    <table>
+        <tr>
+            <th>preffix</th>
+            <th>company name</th>
+            <th>company address</th>
+        </tr>
+        <tr ng-repeat="preffix in preffixList">
+            <td>{{preffix.registry}}.{{preffix.registrant}}</td>
+            <td>{{preffix.company.name}}</td>
+            <td>{{preffix.company.address}}</td>
+        </tr>
+    </table>
+</div>

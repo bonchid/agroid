@@ -1,0 +1,71 @@
+var agentCount = 1
+var rawProvidersCount = 1
+
+function addAgents(){
+	var nameA = 'aName'+agentCount
+	var agent = document.getElementById('agentName')
+	var newElementA = document.createElement('div')
+	newElementA.setAttribute('class', 'styleListElement')
+	newElementA.setAttribute('id', 'd' + nameA)
+	newElementA.innerHTML = "DOI дистрибьютер " + agentCount + ": <input type='text' id='" + nameA + "'/>"
+	
+	agent.appendChild(newElementA)
+	agentCount = agentCount + 1
+}
+
+function clearAgents(){
+	for(var ix = agentCount-1; ix > 0; ix--) {
+		document.getElementById('agentName').removeChild(document.getElementById('aName'+ix))
+		//$("agentName").removeChild($("aName"+ix))
+	}
+	//$("agentName").empty()
+	agentCount = 1
+}
+
+function addRawProviders(){
+	var nameRP = 'rpName'+rawProvidersCount
+	var rawProviders = document.getElementById('rawProvidersName')
+	var newElementRP = document.createElement('div')
+	newElementRP.setAttribute('class', 'styleListElement')
+	newElementRP.setAttribute('id', 'd' + nameRP)
+	newElementRP.innerHTML = "DOI поставщик " + rawProvidersCount + ": <input type='text' id='" + nameRP + "'/>"
+	
+	rawProviders.appendChild(newElementRP)
+	rawProvidersCount = rawProvidersCount + 1
+}
+
+function clearRawProviders(){
+	for(var ix = rawProvidersCount-1; ix > 0; ix--) {
+		document.getElementById('rawProvidersName').removeChild(document.getElementById('rpName'+ix))
+		//$("rawProvidersName").removeChild($("rpName"+ix))
+	}
+	//$("rawProvidersName").empty()
+	rawProvidersCount = 1
+}
+
+function sendProductInfoToServer(){
+	var arrayA = []
+	var arrayRP = []
+	for(var ix = 1; ix < agentCount; ix++) {
+		arrayA.push(document.getElementById("aName"+ix))
+		console.log($("aName"+ix))
+	}
+	
+	for(var ix = 1; ix < rawProvidersCount; ix++) {
+		arrayRP.push(document.getElementById("rpName"+ix))
+		console.log($("rpName"+ix))
+	}
+	
+	formData = JSON.stringify({'productName':document.getElementById('productName').value,'producerName':document.getElementById('producerName').value,
+							   'producerAddress':document.getElementById('producerAddress').value,'produceDate':document.getElementById('produceDate').value,
+							   'expirationDate':document.getElementById('expirationDate').value,'agentsNames':arrayA, 'rawProvidersNames':arrayRP});
+	console.log(formData)
+	$.ajax({
+		type: "POST",
+		url: "some.php",
+		data: formData,
+		success: function(msg){
+			alert( "Прибыли данные: " + msg );
+		}
+	});
+}

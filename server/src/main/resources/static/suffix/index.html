@@ -1,0 +1,69 @@
+<html xmlns="http://www.w3.org/1999/xhtml"lang="ru">
+		<head>
+			<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+			<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+			<title>Система регистрации продукции</title>
+			<script type="text/javascript" src="../js/jquery.min.js"></script>
+			<script type="text/javascript" src="../js/qrcode.min.js"></script>
+			<link rel="stylesheet" type="text/css" href="../css/pageStyle.css">
+			
+			<script type="text/javascript" src="../js/suffixScript.js"></script>
+		</head>
+			
+		<body onload="startJS()">
+			<div id="authWindow" class="login" align="center">
+				<h1>Авторизация</h1>
+                <table width="30%" id="loginTab">
+                    <tr>
+                        <td><label for="login">Логин:</label></td>
+                        <td><input type="text" value="test" id="login"/></td>
+                    </tr>
+                    <tr>
+                        <td><label for="password">Пароль:</label></td>
+                        <td><input type="text" value="test" id="password"/></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" align="center">
+                            <button id="sendAuthData" onclick="sendAuthData()">Отправить</button>
+                        </td>
+                    </tr>
+                </table>
+			</div>
+			
+			<div id="successAuthWindow" class="suffix" >
+
+                <h2 id="h3" align="center" style="display:none; text-align: center;">Регистрация продукта</h2>
+
+                <br><br><br>
+
+                <table id="successAuthTab" width="60%" style="float: left">
+                    <tr>
+                        <td>
+                            <label for="dPrefficsInfo" style="display:none" id="lPrefficsInfo">DOI-префикс:</label>
+                            <span id="dPrefficsInfo"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="dCompanyName" style="display:none" id="lCompanyName">Наименование компании:</label>
+                            <span id="dCompanyName"></span>
+                        </td>
+                    </tr>
+                    <tr id="inputInv" style="display:none">
+                        <td>
+                            <label for="iSuffix" id="lSuffix">Идентификатор партии продукта: </label>
+                            <input type="text" value = "ABC.110" id="iSuffix"/>
+                        </td>
+                    </tr>
+                    <tr id="inputInv2" style="display:none">
+                        <td>
+                            <label for="iManufactureDate" id="lManufactureDate">Дата производства: </label>
+                            <input type="text" value="20.11.2016" id="iManufactureDate"/>
+                        </td>
+                    </tr>
+                </table>
+		</div>
+		
+		<div id="qrcode" style="display:none"></div>
+	</body>
+</html>

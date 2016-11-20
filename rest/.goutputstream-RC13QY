@@ -1,0 +1,26 @@
+<html lang="ru">
+	<head>
+		<meta charset="utf-8">
+		<title>Система регистрации продукции</title>
+		<script type="text/javascript" src="jquery.min.js"></script>
+		<script type="text/javascript" src="angular.min.js"></script>
+		<script type="text/javascript" src="qrcode.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="pageStyle.css">
+		
+		<script type="text/javascript" src="domControl.js"></script>
+	</head>
+		
+	<body>
+		<div id="SendForm">
+			<div class="mainHeader">Форма добавления товара</div><br>
+			<div id="productName" class="styleProductName">Название продукта: <input type="text" name="productName"/></div>
+			<div id="producerName" class="styleProducerName">Название производителя: <input type="text" name="producerName"/></div>
+			<div id="producerAddress" class="styleProducerAddress">Адрес производства: <input type="text" name="producerAddress"/></div>
+			<div id="produceDate" class="styleProduceDate">Дата производства: <input type="text" name="produceDate"/></div>
+			<div id="expirationDate" class="styleExpirationDate">Срок годности: <input type="text" name="expirationDate"/></div>
+			Дистрибьютеры: <input type="submit" class="button" value="Добавить" onclick=""/>
+			<div id="agnetName" class="styleAgnetName"></div>
+			<div id="rawProvidersName" class="styleRawProvidersName"></div>
+		</div>
+	</body>
+</html>

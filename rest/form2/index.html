@@ -1,0 +1,63 @@
+<!--DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"!-->
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+		<title>Система регистрации продукции</title>
+		<script type="text/javascript" src="../js/jquery.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="../css/pageStyle.css">
+			
+		<script type="text/javascript" src="../js/form2script.js"></script>
+	</head>
+		
+	<body>
+		<div id="authWindow" class="login" align="center">
+			<h1>Авторизация</h1>
+			<table width="30%" id="loginTab">
+                    <tr>
+                        <td><label for="login">Логин:</label></td>
+                        <td><input type="text" value="test" id="login"/></td>
+                    </tr>
+                    <tr>
+                        <td><label for="password">Пароль:</label></td>
+                        <td><input type="text" value="test" id="password"/></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" align="center">
+                            <button id="sendAuthData" onclick="sendAuthData()">Отправить</button>
+                        </td>
+                    </tr>
+			</table>
+		</div>
+		
+		<div id="factoryAddWindow" style="display:none">
+			<label for="factoryAddress">Адрес производства: </label>
+			<input type="text" value="Russia, Moscow, Arbatskaya st., 56 h." id="factoryAddress"/>
+			
+			<button id="sendFactoryData" onclick="sendFactoryData()">Отправить</button>
+		</div>
+		
+		<div id="preffixAddWindow" style="display:none">
+			<label for="companyName">Название компании: </label>
+			<input type="text" value="PolyaPolesya" id="companyName"/>
+			<label for="companyAddress">Адрес компании: </label>
+			<input type="text" value="Russia, Nizhny Novgorod, Kutilovskaya st., 12 h." id="companyAddress"/>
+			<label for="preffixName">Префикс DOI: </label>
+			<input type="text" value="53.1071" id="preffixName"/>
+			
+			
+		</div>
+		
+		<div id="productAddWindow" style="display:none">
+			<label for="productName">Наименование продукта: </label>
+			<input type="text" value="siyr" id="productName"/>
+			<label for="shelfTime">Срок годности продукта: </label>
+			<input type="text" value="35" id="shelfTime"/>
+			<label for="prAdditionalInfo">Дополнительная информация о продукте: </label>
+			<input type="text" value="Molochniye siyr" id="prAdditionalInfo"/>
+			
+			<button id="sendProductData" onclick="sendProductData()">Отправить</button>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,38 @@
+<!--DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"!-->
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+		<title>Система регистрации продукции</title>
+		<script type="text/javascript" src="../js/jquery.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="../css/pageStyle.css">
+			
+		<script type="text/javascript" src="../js/form3script.js"></script>
+	</head>
+		
+	<body>
+		<div id="authWindow">
+			<label for="login">Логин:</label>
+			<input type="text" value="test" id="login"/>
+			<label for="password">Пароль:</label>
+			<input type="text" value="test" id="password"/>
+			
+			<button id="sendAuthData" onclick="sendAuthData()">Отправить</button>
+		</div>
+		
+		<div id="formGetPath" style="display:none">
+			<label for="gpSuffixName">Суффикс DOI для отображения списка дистрибьютеров: </label>
+			<input type="text" value="ABC.41340" id="gpSuffixName"/>
+			
+			<button id="sendPathReq" onclick="sendPathReq()">Отправить</button>
+		</div>
+		
+		<div id="setNewDistributor" style="display:none">
+			<label for="ndSuffixName">Суффикс DOI для добавления дистрибьютера: </label>
+			<input type="text" value="ABC.41340" id="ndSuffixName"/>
+			
+			<button id="sendNewDistributorMes" onclick="sendNewDistributorMes()">Отправить</button>
+		</div>
+	</body>
+</html>
